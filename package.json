@@ -12,6 +12,7 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
-    "05-todo-app": "file:"
+    "05-todo-app": "file:",
+    "uuid": "^11.1.0"
   }
 }
