@@ -23,8 +23,8 @@ export const App = (elementId) => {
         displayTodos();
     })();
 
-    
-    const btnClearCompleted =  document.querySelector(ElementIDs.ClearCompleted);
+
+    const btnClearCompleted = document.querySelector(ElementIDs.ClearCompleted);
     btnClearCompleted.addEventListener('click', () => {
         todoStore.deleteCompleted();
         displayTodos();
@@ -41,9 +41,18 @@ export const App = (elementId) => {
     });
 
     const todoListUL = document.querySelector(ElementIDs.TodoList);
+
     todoListUL.addEventListener('click', (event) => {
-        // if(event.target)
-        console.log(event.target);
+        const element = event.target.closest('[data-id]');
+        todoStore.toggleTodo(element.getAttribute('data-id'));
+        displayTodos();
+    });
+
+    todoListUL.addEventListener('click', (event) => {
+        const element = event.target.closest('[data-id]');
+        if(!element || !event.target.classList.contains('destroy')) return;
         
+        todoStore.deleteTodo(element.getAttribute('data-id'));
+        displayTodos();
     });
 }   

@@ -27,14 +27,14 @@ export const createTodoHtml = (todo) => {
         liElement.classList.add('completed');
     }
 
-    liElement.querySelector('.toggle').addEventListener('click', () => {
-        todoStore.toggleTodo(todo.id);
-        if (todo.done) {
-            liElement.classList.add('completed');
-        } else{
-            liElement.classList.remove('completed');
-        }
-    });
+    // liElement.querySelector('.toggle').addEventListener('click', () => {
+    //     todoStore.toggleTodo(todo.id);
+    //     if (todo.done) {
+    //         liElement.classList.add('completed');
+    //     } else{
+    //         liElement.classList.remove('completed');
+    //     }
+    // });
 
     return liElement;
 }
